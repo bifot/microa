@@ -13,7 +13,9 @@ $ npm i microa -S
 
 ## Tests
 
-Tests in WIP.
+```sh
+$ npm test
+```
 
 ## Usage
 
@@ -25,7 +27,7 @@ Microservice natively can accept requests via http & sockets.
 import { createApp, createRoute } from 'microa'
 
 createRoute('/users', {
-  '/create': async (ctx) => {
+  '/create': (ctx) => {
     // Backend magic... 🧙
     ctx.body = { id: 1 }
   },

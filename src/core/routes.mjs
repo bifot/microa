@@ -9,6 +9,8 @@ export const createRoute = (prefix, routes) => {
   }), {})
 }
 
+export const getRoutes = () => routesPool
+
 export const getKoaRoutes = debug => Object.entries(routesPool).map(([prefix, routes]) => {
   const router = new Router({ prefix })
 
