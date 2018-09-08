@@ -1,0 +1,39 @@
+{
+  "name": "microa",
+  "version": "0.1.0",
+  "description": "Framework for easily building responsive microservices. 🔬",
+  "main": "src/microservice.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint ./ --ext .mjs",
+    "eslint:fix": "eslint ./ --ext .mjs --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bifot/microa.git"
+  },
+  "keywords": [
+    "microservice",
+    "ms",
+    "koa"
+  ],
+  "author": "Mikhail Semin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bifot/microa/issues"
+  },
+  "homepage": "https://github.com/bifot/microa#readme",
+  "devDependencies": {
+    "@bifot/eslint-config": "^1.0.1",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "dependencies": {
+    "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-compose": "^4.1.0",
+    "koa-router": "^7.4.0",
+    "socket.io": "^2.1.1"
+  }
+}
