@@ -1,4 +1,5 @@
 import Router from 'koa-router'
+import * as Models from './models'
 
 const routesPool = {}
 
@@ -33,11 +34,17 @@ export const getSocketRoutes = client => Object.entries(routesPool).map(([prefix
     const event = `${formattedPrefix}:${formattedEndpoint}`
 
     client.on(event, (data, callback = () => {}) => {
-      const ctx = Object.defineProperty({
+      const ctx = Object.defineProperties({
         client,
         params: data,
-      }, 'body', {
-        set: body => callback(body),
+        models: Models.getModels({
+          ...client,
+          params: data,
+        }),
+      }, {
+        body: {
+          set: body => callback(body),
+        },
       })
 
       middleware(ctx)
