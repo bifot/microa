@@ -4,9 +4,4 @@ import * as routes from './core/routes'
 
 export const createApp = app
 export const { createModels } = models
-export const {
-  createRoute,
-  getRoutes,
-  getKoaRoutes,
-  getSocketRoutes,
-} = routes
+export const { createRoute } = routes

@@ -2,15 +2,37 @@ import 'mjs-mocha'
 import chai from 'chai'
 import { client } from './config.test.mjs'
 import {
+  createModels,
+  getModels,
   createRoute,
   getRoutes,
   getKoaRoutes,
   getSocketRoutes,
-} from '..'
+} from './exports.test.mjs'
 
 const { expect } = chai
 
 describe('core', () => {
+  it('create models', () => {
+    createModels({
+      user: class User {
+        constructor(ctx) {
+          this.id = ctx.params.id
+        }
+      },
+    })
+
+    const models = getModels({
+      params: {
+        id: 1,
+      },
+    })
+
+    expect(models).to.be.a('object').to.have.all.keys(['user'])
+    expect(models.user).to.be.a('object')
+    expect(models.user.id).to.equal(1)
+  })
+
   it('create route', () => {
     createRoute('/categories', {
       '/list': () => {},
