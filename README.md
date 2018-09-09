@@ -1,5 +1,5 @@
 [![microa](https://img.shields.io/npm/v/microa.svg?style=flat-square)](https://www.npmjs.com/package/microa)
-![microa](https://img.shields.io/travis/bifot/microa/master.svg?style=flat-square)
+![microa](https://img.shields.io/travis/com/bifot/microa.svg?style=flat-square)
 ![microa](https://img.shields.io/badge/code%20style-airbnb-brightgreen.svg?style=flat-square)
 
 # microa
