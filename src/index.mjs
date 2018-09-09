@@ -10,6 +10,3 @@ export const {
   getKoaRoutes,
   getSocketRoutes,
 } = routes
-
-// TODO: createMiddleware(fn)
-// TODO: createModels(field, Object<Models>)

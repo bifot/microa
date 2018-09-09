@@ -1,4 +1,5 @@
 [![microa](https://img.shields.io/npm/v/microa.svg?style=flat-square)](https://www.npmjs.com/package/microa)
+![microa](https://api.travis-ci.org/bifot/microa.svg?branch=master&style=flat-square)
 ![microa](https://img.shields.io/badge/code%20style-airbnb-brightgreen.svg?style=flat-square)
 
 # microa
