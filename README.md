@@ -6,6 +6,10 @@
 
 Framework for easily building responsive microservices. 🔬
 
+## Introduction
+
+Framework works only with Node >= 8.5 and flag `--experimental-modules`.
+
 ## Install
 
 ```sh

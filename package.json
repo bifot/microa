@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Framework for easily building responsive microservices. 🔬",
   "main": "src/microservice.mjs",
+  "engines" : {
+    "node" : ">=8.5"
+  },
   "scripts": {
     "test": "NODE_ENV=test node --experimental-modules src/test/core.test.mjs",
     "eslint": "eslint ./ --ext .mjs",
