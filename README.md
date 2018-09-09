@@ -97,7 +97,7 @@ createRoute('/users', {
 
 ### .createRoute(prefix, routes)
 
-Create routes. Paths will transform for `socket.io` & `http` automatically.
+Create routes. Paths will transform for `socket.io` & `http` automatically. Be careful, `http` requests work only via `POST` method.
 
 * `socket.io` ⇒ `books:get-all`
 * `http` ⇒ `/books/get/all`
