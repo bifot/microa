@@ -65,6 +65,62 @@ const { data } = await axios.post('http://localhost:3000/users/create', {
 })
 ```
 
+## Methods
+
+Import all needed methods.
+
+```js
+import { createModels, createRoute, createApp } from 'microa'
+```
+
+### .createModels(models)
+
+Create models for context. Every class constuctor accepts one argument `ctx`.
+
+```js
+createModels({
+  user: class User {},
+  balance: class Balance {},
+})
+```
+
+After initializing models, instances will passed in `ctx.models`.
+
+```js
+createRoute('/users', {
+  '/me': (ctx) => {
+    // ctx.models.user
+    // ctx.models.balance
+  },
+})
+```
+
+### .createRoute(prefix, routes)
+
+Create routes. Paths will transform for `socket.io` & `http` automatically.
+
+* `socket.io` => `books:get-all`
+* `http` => `/books/get/all`
+
+```js
+createRoute('/books', {
+  '/get/all': (ctx) => {
+    // ...
+  },
+})
+```
+
+### .createApp(options)
+
+Start listening app.
+
+```js
+createApp({
+  name: 'Microservice',  // microservice name
+  port: 8080,            // listening port
+})
+```
+
 ## License
 
 MIT.
