@@ -99,8 +99,8 @@ createRoute('/users', {
 
 Create routes. Paths will transform for `socket.io` & `http` automatically.
 
-* `socket.io` => `books:get-all`
-* `http` => `/books/get/all`
+* `socket.io` ⇒ `books:get-all`
+* `http` ⇒ `/books/get/all`
 
 ```js
 createRoute('/books', {
