@@ -1,9 +1,9 @@
-export default (ctx, next) => {
+export default async (ctx, next) => {
   ctx.params = {
     ...ctx.params,
     ...ctx.request.query,
     ...ctx.request.body,
   };
 
-  return next();
+  await next();
 };

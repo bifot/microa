@@ -29,32 +29,32 @@ Microservice natively can accept requests via http & sockets.
 **Backend:**
 
 ```js
-import { createApp, createRoute } from 'microa'
+import { createApp, createRoute } from 'microa';
 
 createRoute('/users', {
   '/create': (ctx) => {
     // Backend magic... 🧙
-    ctx.body = { id: 1 }
+    ctx.body = { id: 1 };
   },
-})
+});
 
 createApp({
-  name: 'Powerful microservice',
   port: 3000,
-})
+  debug: true,
+});
 ```
 
 **Frontend:**
 
 ```js
 // Create connect to the microservice
-const socket = io('http://localhost:3000')
+const socket = io('http://localhost:3000');
 
 // Send an event via promisified emit method
 const response = await socket.emitAsync('users:create', {
   fistName: 'Mikhail',
   lastName: 'Semin',
-})
+});
 ```
 
 ```js
@@ -62,7 +62,7 @@ const response = await socket.emitAsync('users:create', {
 const { data } = await axios.post('http://localhost:3000/users/create', {
   fistName: 'Mikhail',
   lastName: 'Semin',
-})
+});
 ```
 
 ## Methods
@@ -70,7 +70,7 @@ const { data } = await axios.post('http://localhost:3000/users/create', {
 Import all needed methods.
 
 ```js
-import { createModels, createRoute, createApp } from 'microa'
+import { createModels, createRoute, createApp } from 'microa';
 ```
 
 ### .createModels(models)
@@ -81,7 +81,7 @@ Create models for context. Every class constuctor accepts one argument `ctx`.
 createModels({
   user: class User {},
   balance: class Balance {},
-})
+});
 ```
 
 After initializing models, instances will passed in `ctx.models`.
@@ -92,7 +92,7 @@ createRoute('/users', {
     // ctx.models.user
     // ctx.models.balance
   },
-})
+});
 ```
 
 ### .createRoute(prefix, routes)
@@ -107,7 +107,7 @@ createRoute('/books', {
   '/get/all': (ctx) => {
     // ...
   },
-})
+});
 ```
 
 ### .createApp(options)
@@ -116,9 +116,9 @@ Start listening app.
 
 ```js
 createApp({
-  name: 'Microservice',  // microservice name
-  port: 8080,            // listening port
-})
+  port: 8080,
+  debug: true,
+});
 ```
 
 ## License

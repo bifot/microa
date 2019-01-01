@@ -6,7 +6,7 @@ import socket from 'socket.io';
 import * as Routes from './routes';
 import { composeParams, assignModels } from '../middlewares';
 
-export default ({ name = 'Microservice', port = 8080, debug }) => {
+export default ({ port, debug }) => {
   const app = new Koa();
   const koaRoutes = Routes.getKoaRoutes(debug);
 
@@ -22,8 +22,7 @@ export default ({ name = 'Microservice', port = 8080, debug }) => {
     Routes.getSocketRoutes(client);
   });
 
-  server.listen(port, () => {
-    // eslint-disable-next-line no-console
-    console.log(`${name} starts listen on ${port} port.`);
-  });
+  server.listen(port);
+
+  return server;
 };
