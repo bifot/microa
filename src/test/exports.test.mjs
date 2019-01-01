@@ -1,13 +1,13 @@
-import * as models from '../core/models'
-import * as routes from '../core/routes'
+import * as models from '../core/models';
+import * as routes from '../core/routes';
 
 export const {
   createModels,
   getModels,
-} = models
+} = models;
 export const {
   createRoute,
   getRoutes,
   getKoaRoutes,
   getSocketRoutes,
-} = routes
+} = routes;

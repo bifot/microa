@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "NODE_ENV=test node --experimental-modules src/test/core.test.mjs",
-    "eslint": "eslint ./ --ext .mjs",
-    "eslint:fix": "eslint ./ --ext .mjs --fix"
+    "eslint": "eslint ./ --ext .js,.mjs",
+    "eslint:fix": "eslint ./ --ext .js,.mjs --fix"
   },
   "repository": {
     "type": "git",
