@@ -1,7 +1,7 @@
-import * as Models from '../core/models'
+import * as models from '../core/models';
 
-export default (ctx, next) => {
-  ctx.models = Models.getModels(ctx)
+export default async (ctx, next) => {
+  ctx.models = models.getModels(ctx);
 
-  return next()
-}
+  await next();
+};
