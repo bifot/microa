@@ -1,14 +1,8 @@
-import 'mjs-mocha';
 import chai from 'chai';
-import { client } from './config.test.mjs';
-import {
-  createModels,
-  getModels,
-  createRoute,
-  getRoutes,
-  getKoaRoutes,
-  getSocketRoutes,
-} from './exports.test.mjs';
+import { client } from './config';
+import { createModels, createRoute } from '../src/exports';
+import { getModels } from '../src/core/models';
+import { getRoutes, getKoaRoutes, getSocketRoutes } from '../src/core/routes';
 
 const { expect } = chai;
 

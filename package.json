@@ -2,12 +2,12 @@
   "name": "microa",
   "version": "1.0.1",
   "description": "Framework for easily building responsive microservices. 🔬",
-  "main": "src/microservice.mjs",
-  "engines" : {
-    "node" : ">=8.5"
+  "main": "src/exports.mjs",
+  "engines": {
+    "node": ">=8.5"
   },
   "scripts": {
-    "test": "NODE_ENV=test node --experimental-modules src/test/core.test.mjs",
+    "test": "mjs-mocha",
     "eslint": "eslint ./ --ext .js,.mjs",
     "eslint:fix": "eslint ./ --ext .js,.mjs --fix"
   },
@@ -32,7 +32,7 @@
     "eslint": "^5.5.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "mjs-mocha": "^1.0.2"
+    "mjs-mocha": "^2.1.2"
   },
   "dependencies": {
     "koa": "^2.5.2",
